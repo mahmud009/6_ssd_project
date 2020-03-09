@@ -58,10 +58,10 @@ $bg-color: #2979f2;
 
 body {
   font-family: ProximaNovaRegular;
+  color: $font-primary;
 }
 
-p,
-a {
+p {
   font-family: ProximaNovaRegular;
   font-size: 16px;
   color: $font-primary !important;
@@ -72,6 +72,84 @@ a {
 
   @include large-screen {
     font-size: 20px;
+  }
+}
+
+a {
+  font-family: ProximaNovaRegular;
+  font-size: 16px;
+  color: $bg-color !important;
+  font-weight: bold;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-decoration: none !important;
+  position: relative;
+
+  @include desktop {
+    font-size: 20px;
+  }
+
+  @include large-screen {
+    font-size: 20px;
+  }
+
+  span {
+    border-radius: 50%;
+    background-color: $bg-color;
+    width: 18px;
+    height: 18px;
+    text-align: center;
+    box-shadow: 0px 0px 79px 6px rgba(41, 121, 242, 1);
+    transition: all 0.25s ease;
+    position: relative;
+    transform-origin: center center;
+
+    i {
+      color: $color-white;
+      font-size: 12px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+}
+
+.click-enabled {
+  transform: scale(1.8);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: ProximaNovaBold;
+}
+
+h1 {
+  font-size: 32px;
+
+  @include desktop {
+    font-size: 48px;
+  }
+
+  @include large-screen {
+    font-size: 48px;
+  }
+}
+
+h2 {
+  font-size: 28px;
+
+  @include desktop {
+    font-size: 32px;
+  }
+
+  @include large-screen {
+    font-size: 32px;
   }
 }
 
@@ -104,6 +182,7 @@ a {
 
 .nav-link {
   color: lighten($font-primary, 30%) !important;
+  font-weight: normal;
   font-size: 18px;
 }
 
@@ -187,12 +266,10 @@ header {
   p {
     font-family: ProximaNovaBold;
     color: $color-white !important;
-    font-size: 20px;
   }
+
   .btn {
     color: $bg-color !important;
-  }
-  .btn {
     font-size: 13px !important;
     padding: 10px 20px 10px 20px;
     letter-spacing: 1px;
@@ -215,25 +292,6 @@ header {
 
 //Service Section styling
 
-.section-title {
-  h1 {
-    font-family: ProximaNovaBold;
-    font-size: 24px;
-
-    @include desktop {
-      font-size: 48px;
-    }
-
-    @include large-screen {
-      font-size: 48px;
-    }
-  }
-
-  p {
-    color: $font-primary;
-  }
-}
-
 .services {
   margin-top: 40px;
 
@@ -247,48 +305,79 @@ header {
 }
 
 .service-single {
-  h3 {
+  h2 {
     color: darken($bg-color, 20%);
     font-weight: bold;
-    font-size: 32px;
     font-family: ProximaNovaBold;
   }
   p {
     color: $bg-color;
   }
+}
 
-  a {
-    color: $bg-color !important;
-    font-weight: bold;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    text-decoration: none;
-    position: relative;
+//Success story styling
 
-    span {
-      border-radius: 50%;
-      background-color: $bg-color;
-      width: 18px;
-      height: 18px;
-      text-align: center;
-      box-shadow: 0px 0px 79px 6px rgba(41, 121, 242, 1);
-      transition: all 0.25s ease;
-      position: relative;
-      transform-origin: center center;
+.success-story {
+  background-color: $bg-color;
+  position: relative;
 
-      i {
-        color: $color-white;
-        font-size: 12px;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-      }
+  @include large-screen {
+    background-color: #f5f5f5;
+  }
+}
+
+.success-bg {
+  display: none;
+  width: 26%;
+  height: 100%;
+  background-color: $bg-color;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  @include large-screen {
+    display: inherit;
+  }
+}
+
+.success-story-content {
+  .quote {
+    font-size: 28px;
+    line-height: 36px;
+    color: $color-white !important;
+
+    @include large-screen {
+      color: $font-primary !important;
+    }
+  }
+
+  p {
+    line-height: 16px;
+    color: $color-white !important;
+    @include large-screen {
+      color: $font-primary !important;
+    }
+  }
+
+  h4 {
+    color: $color-white;
+    @include large-screen {
+      color: $font-primary;
     }
   }
 }
 
-.click-enabled {
-  transform: scale(1.8);
+.success-story-img {
+  img {
+    border-radius: 50%;
+  }
+}
+
+.success-story .section-title {
+  p {
+    color: $color-white !important;
+    z-index: 999999;
+    position: relative;
+    font-size: 24px;
+  }
 }
