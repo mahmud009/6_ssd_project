@@ -1,1 +1,17 @@
-/* No CSS *//*# sourceMappingURL=style.css.map */
+@font-face {
+  font-family: ProximaNova;
+  src: url(../fonts/ProximaNova-Regular.otf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.navbar-brand img {
+  width: 60px;
+  height: auto;
+}
+/*# sourceMappingURL=style.css.map */
