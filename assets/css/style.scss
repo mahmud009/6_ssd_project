@@ -1,17 +1,294 @@
+//Custom font family
 @font-face {
-  font-family: ProximaNova;
+  font-family: ProximaNovaRegular;
   src: url(../fonts/ProximaNova-Regular.otf);
+  font-weight: 100, 200, 300, 400, 500, 600, 700, 800, 900;
+  font-stretch: normal;
 }
 
+@font-face {
+  font-family: ProximaNovaExtraBold;
+  src: url(../fonts/ProximaNovaExtrabold.otf);
+  font-weight: 100, 200, 300, 400, 500, 600, 700, 800, 900;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: ProximaNovaBold;
+  src: url(../fonts/ProximaNovaBold.otf);
+  font-stretch: normal;
+}
+
+//Sass Variables
+$font-primary: #393e46;
+$color-white: white;
+$bg-color: #2979f2;
+
+//Sass Mixins
+@mixin mobile {
+  @media (min-width: 576px) {
+    @content;
+  }
+}
+
+@mixin tablets {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: 992px) {
+    @content;
+  }
+}
+
+@mixin large-screen {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}
+
+//Page styling
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+body {
+  font-family: ProximaNovaRegular;
+}
+
+p,
+a {
+  font-family: ProximaNovaRegular;
+  font-size: 16px;
+  color: $font-primary !important;
+
+  @include desktop {
+    font-size: 20px;
+  }
+
+  @include large-screen {
+    font-size: 20px;
+  }
+}
+
+.bg-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 650px;
+  width: 100%;
+  background-color: $bg-color;
+  z-index: -9999;
+
+  @include tablets {
+    height: 800px;
+  }
+
+  @include desktop {
+    height: 580px;
+  }
+
+  @include large-screen {
+    height: 580px;
+  }
+}
+
+.btn {
+  font-size: 18px;
+  color: white !important;
+}
+
+.nav-link {
+  color: lighten($font-primary, 30%) !important;
+  font-size: 18px;
+}
+
+//Header Styling
+header {
+  box-shadow: 0px -5px 8px 0px rgba(0, 0, 0, 0.75);
+  background-color: white;
+
+  @include desktop {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  @include large-screen {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+}
+
+.navbar-nav {
+  li {
+    margin-left: 15px;
+  }
+}
+
 .navbar-brand {
   img {
-    width: 60px;
+    width: 32px;
     height: auto;
+
+    @include desktop {
+      width: 70px;
+      height: auto;
+    }
+
+    @include tablets {
+      height: 70px;
+      height: auto;
+    }
   }
+}
+
+//Banner styling
+.banner {
+  height: 650px;
+  margin-top: 30px;
+  padding: 15px;
+
+  @include tablets {
+    height: 750px;
+    margin-top: 60px;
+  }
+
+  @include desktop {
+    height: 580px;
+    margin-top: 30px;
+  }
+
+  @include large-screen {
+    height: 580px;
+    margin-top: 30px;
+  }
+}
+
+.banner-content {
+  h1 {
+    font-family: ProximaNovaBold;
+    color: $color-white;
+    font-size: 32px;
+    span {
+      display: block;
+    }
+
+    @include desktop {
+      font-size: 64px;
+    }
+    @include large-screen {
+      font-size: 64px;
+    }
+  }
+  p {
+    font-family: ProximaNovaBold;
+    color: $color-white !important;
+    font-size: 20px;
+  }
+  .btn {
+    color: $bg-color !important;
+  }
+  .btn {
+    font-size: 13px !important;
+    padding: 10px 20px 10px 20px;
+    letter-spacing: 1px;
+  }
+}
+
+.banner-img {
+  img {
+    @include desktop {
+      margin-bottom: -35px;
+      padding-left: 35px;
+    }
+
+    @include large-screen {
+      margin-bottom: -35px;
+      padding-left: 35px;
+    }
+  }
+}
+
+//Service Section styling
+
+.section-title {
+  h1 {
+    font-family: ProximaNovaBold;
+    font-size: 24px;
+
+    @include desktop {
+      font-size: 48px;
+    }
+
+    @include large-screen {
+      font-size: 48px;
+    }
+  }
+
+  p {
+    color: $font-primary;
+  }
+}
+
+.services {
+  margin-top: 40px;
+
+  @include desktop {
+    margin-top: 100px;
+  }
+
+  @include large-screen {
+    margin-top: 100px;
+  }
+}
+
+.service-single {
+  h3 {
+    color: darken($bg-color, 20%);
+    font-weight: bold;
+    font-size: 32px;
+    font-family: ProximaNovaBold;
+  }
+  p {
+    color: $bg-color;
+  }
+
+  a {
+    color: $bg-color !important;
+    font-weight: bold;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-decoration: none;
+    position: relative;
+
+    span {
+      border-radius: 50%;
+      background-color: $bg-color;
+      width: 18px;
+      height: 18px;
+      text-align: center;
+      box-shadow: 0px 0px 79px 6px rgba(41, 121, 242, 1);
+      transition: all 0.25s ease;
+      position: relative;
+      transform-origin: center center;
+
+      i {
+        color: $color-white;
+        font-size: 12px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+}
+
+.click-enabled {
+  transform: scale(1.8);
 }
