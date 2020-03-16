@@ -80,34 +80,27 @@ a {
   font-size: 16px;
   color: $bg-color !important;
   font-weight: bold;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
   text-decoration: none !important;
-  position: relative;
-
-  @include desktop {
-    font-size: 20px;
-  }
-
-  @include large-screen {
-    font-size: 20px;
-  }
+  display: block;
 
   span {
-    border-radius: 50%;
-    background-color: $bg-color;
-    width: 18px;
-    height: 18px;
-    text-align: center;
     box-shadow: 0px 0px 79px 6px rgba(41, 121, 242, 1);
     transition: all 0.25s ease;
+    width: 20px;
+    height: 20px;
+    background-color: $bg-color;
+    border-radius: 50%;
+    display: inline-block;
+    text-align: center !important;
+    transform-origin: center;
     position: relative;
-    transform-origin: center center;
+    top: 5px;
 
     i {
-      color: $color-white;
       font-size: 12px;
+
+      color: $color-white;
+      display: block;
       position: absolute;
       top: 50%;
       left: 50%;
@@ -117,7 +110,7 @@ a {
 }
 
 .click-enabled {
-  transform: scale(1.8);
+  transform: scale(1.5);
 }
 
 h1,
@@ -144,8 +137,12 @@ h1 {
 h2 {
   font-size: 28px;
 
+  @include tablets {
+    font-size: 24px;
+  }
+
   @include desktop {
-    font-size: 32px;
+    font-size: 24px;
   }
 
   @include large-screen {
@@ -163,7 +160,7 @@ h2 {
   z-index: -9999;
 
   @include tablets {
-    height: 800px;
+    height: 450px;
   }
 
   @include desktop {
@@ -238,7 +235,7 @@ header {
   padding: 15px;
 
   @include tablets {
-    height: 750px;
+    height: 400px;
     margin-top: 60px;
   }
 
